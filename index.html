@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Offline
+    </title>
+    <meta charset='utf-8'>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async=""
+    class='remove'>
+</script>
+    <script src="respecConfig.js" class='remove'>
+</script>
+  </head>
+  <body>
+    <section id='abstract'>
+      <p>
+        This document aims to identify the current issues with creating web applications with offline capabilities and detail the use cases and requirements necessary for future offline solutions. The document will go through the current methods for creating offline web apps, the gap in offline behaviour between web and native, user experiences, using offline with installable web applications and other issues such as security and privacy.
+      </p>
+    </section>
+    <section id='sotd'>
+    </section>
+
+     <section>
+      <h2>
+        Introduction
+      </h2>
+      <p>
+        One of the most obvious differences between native and web applications is the offline capabilities of native applications. Throughout the past few years a number of solutions have been proposed and implemented (AppCache, LocalStorage) . Due to some successes and difficulties with these solutions we are now seeing newer ones come to light (ServiceWorker). Throughout this document we hope to provide the developers of these solutions, and ultimately the implementers, with the information they need to create a workable offline solution for web applications. 
+      </p>
+    </section>
+
+    <section>
+      <h2>Current Situation</h2>
+      <p>Here we detail the current solutions which can be used for offline behaviour, and the documented issues associated with each (if any).</p>
+    
+      <section>
+        <h3>APIs</h3>
+
+        <section>
+          <h4>App Cache</h4>
+          <p>Good to include Jake Archibald's findings here</p>
+        </section>
+
+        <section>
+          <h4>LocalStorage</h4>
+          <p>Issues with simplicity?</p>
+        </section>
+
+        <section>
+          <h4>IndexedDB</h4>
+          <p>Issues with complexity and restricted to simple data (no resources)?</p>
+        </section>
+      </section>
+
+      <section>
+        <h3>HTTP Cache</h3>
+        <p>Why it's not suitable, or whether it is?</p>
+      </section>
+
+      <section>
+        <h3>Offline Across Browsers</h3>
+        <p>Up-to-date table of current implementations</p>
+      </section>
+    </section>
+
+    <section>
+      <h2>Gap with Native</h2>
+      <p>Document here the experience with offline behaviour on native applications. This is going to be different for a host of applications so let's start with some of the top downloaded apps (Netflix, Angry Birds, Facebook, Instagram, more top apps).</p>
+
+      <p>Somewhere in this section document how native applications behave as one 'app' (central data store, stateful) and how web apps behave per 'page' (or URL), which causes major differences in possible solutions.
+    </section>
+
+    <section>
+      <h2>Effects of Not Implementing Offline</h2>
+      <p>What would happen if we didn't do this? Would native win? On mobile devices or all devices? And what data do we have to support this claim?</p>
+    </section>
+
+
+    <section>
+      <h2>Key Components of Offline</h2>
+      <p>What elements are key to developing an offline solution? Cache, space, URLs...?
+    </section>
+
+    <section>
+      <h2>User Experience</h2>
+      <p>Here we can document some of the ways we feel a user should experience offline (particularly those that are relevant to the implementers rather than developers). Ideas include: browser functionality to save offline content (something like Evernote web clipper), and what the developer should or should not control (as in, the developer currently has little control over the HTTP cache, what else would they like to have? This would implact implementations).
+    </section>
+
+    <section>
+      <h2>Offline and Installable Web Apps</h2>
+      <p>When a user bookmarks a web app, is there any expectation that this has any effect on how much of that app is then available offline? </p>
+
+      <p>Check the installable web apps doc and make sure suggested offline solutions work with what is proposed here (e.g. working alone, chromeless).</p>
+    </section>
+
+    <section>
+      <h2>Requirements</h2>
+      <p>From our analysis above, what requirements would we recommend an offline solution have (mUST, SHOULD etc.)? Please refer to the "New Solutions" section below for reference to ServiceWorker and any other new solutions.
+    </section>
+
+    <section>
+      <h2>New Solutions</h2>
+      <p>Detail ServiceWorker. Analyse whether it is suited for findings we have written in the above sections.</p>
+      <p>When a working implementation of ServiceWorker exists test it by creating demo applications and document findings based on how we found the development, any issues, anything that needs to be documented for a developer, any inconsistencies, strange behaviour etc.</p>
+    </section>
+
+    <section>
+      <h2>Security and Privacy</h2>
+      <p>What security and privacy issues come with offline behaviours and solutions detailed above?</p>
+    </section>
+
+    <section class='appendix'>
+      <h2>
+        Acknowledgements
+      </h2>
+      <p>
+        ...
+      </p>
+    </section>
+
+    <section>
+      <h2>References</h2>
+      <dl class="bibliography"><dt>[ServiceWorker]</dt><dd>Alex Russell, Jake Archibald, David Barrett-Kahn, Anne van Kesteren, Michael Nordman, Darin Fisher, Alec Flett, Andrew Betts, Chris Wilson, Aaron Boodman, Dave Herman, Jonas Sicking, Greg Billock. <a href="https://github.com/slightlyoff/ServiceWorker/blob/master/explainer.md"><cite>Service Workers Explained</cite></a>. 
+</dd></dl>
+    </section>
+  </body>
+</html>
